@@ -1,7 +1,7 @@
 # hejto-lennyNest
 Skrypt user.js usprawniający korzystanie z portalu hejto peel
 <p>
-  <img src="https://raw.githubusercontent.com/Salata/hejto-lennyNest/master/docs/pic1.png" alt="promo" style="max-width: 100%;">
+  <img src="https://raw.githubusercontent.com/Salata/hejto-lennyNest/master/docs/Pic1.png" alt="promo" style="max-width: 100%;">
 </p>
 Instalacja
 
