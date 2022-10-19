@@ -8,7 +8,7 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=hejto.pl
 // ==/UserScript==
 
-const lenniesToUse = ["( ͡° ͜ʖ ͡°)", "( ͡° ل͜ ͡°)", "( ‾ʖ̫‾)", "(✿◠‿◠)", "¯\\_( ͡° ͜ʖ ͡°)_/¯", "(⩺_⩹)", "ʕ◉ᴥ◉ʔ", "༼つ ◕_◕ ༽つ", "(⊙＿⊙)", "（πーπ", "¯\\_(ツ)_/¯", "( ͡ʘ ͜ʖ ͡ʘ)"]
+const lenniesToUse = ["( ͡° ͜ʖ ͡°)", "( ͡° ل͜ ͡°)", "( ‾ʖ̫‾)", "(✿◠‿◠)", "¯\\_( ͡° ͜ʖ ͡°)_/¯", "(⩺_⩹)", "ʕ◉ᴥ◉ʔ", "༼つ ◕_◕ ༽つ", "(⊙＿⊙)", "（πーπ)", "¯\\_(ツ)_/¯", "( ͡ʘ ͜ʖ ͡ʘ)"]
 
 let addLennyFn = function () {
                     if (document.querySelector("div form div div button:first-of-type") !== null) {
@@ -17,7 +17,7 @@ let addLennyFn = function () {
                     }
                 };
 
-let lennyPoller = setInterval(addLennyFn, 50);
+let lennyPoller = setInterval(addLennyFn, 100);
 
 let oldHref = document.location.href;
 
@@ -25,9 +25,10 @@ window.onload = function() {
     let bodyList = document.querySelector("body")
     let observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
-            if (oldHref != document.location.href) {
+            if (oldHref !== document.location.href) {
                 oldHref = document.location.href;
-                 lennyPoller = setInterval(addLennyFn, 50);
+                clearInterval(lennyPoller);
+                lennyPoller = setInterval(addLennyFn, 100);
             }
         });
     });
